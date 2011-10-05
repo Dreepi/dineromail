@@ -11,10 +11,10 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{Dineromail library for Rails}
   s.description = %q{Integration with dineromail plataform for rails projects}
-  
+
   s.add_dependency "happymapper"
   s.add_dependency "httparty"
-  s.add_development_dependency "bundler"
+
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "rspec2-rails-views-matchers"
 
