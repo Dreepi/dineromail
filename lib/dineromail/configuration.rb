@@ -1,10 +1,10 @@
 module Dineromail
   class Configuration
-    attr_accessor :payment_url, :ipn_webservice_url, :account_number, :password,
-              :logo_url, :return_url, :error_url, :pay_methods, :currency, :button_image_url
-            
-    PESO = 1
-    DOLLAR = 2
+    attr_accessor :payment_url, :ipn_webservice_url,
+      :account_number, :password, :seller_name,
+      :logo_url, :button_image_url
+      :ok_url, :pending_url, :error_url,
+      :pay_methods, :currency, :country_id
   end
 
   class << self

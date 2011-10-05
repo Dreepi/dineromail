@@ -17,11 +17,14 @@ You need to create a config file (config/initializers/dineromail.rb) with:
     Dineromail.configure do |config|
       config.pay_methods = '' #All the available methods
       config.account_number = 'your_account_number'
+      config.seller_name = 'Your Company Name'
       config.password = 'your_password'
       config.logo_url = 'http://my-web.com/images/logo.png'
-      config.return_url = 'http://my-web.com/success'
+      config.ok_url = 'http://my-web.com/success'
+      config.pending_url = 'http://my-web.com/pending'
       config.error_url = 'http://my-web.com/error'
-      config.currency = Dineromail::Configuration::PESO
+      config.currency = Dineromail::Currency::PESO_AR
+      config.country_id = Dineromail::Country::ARGENTINA
       config.ipn_webservice_url = 'https://argentina.dineromail.com/Vender/Consulta_IPN.asp'
       config.payment_url = 'https://argentina.dineromail.com/Shop/Shop_Ingreso.asp'
       config.button_image_url = 'https://argentina.dineromail.com/imagenes/vender/boton/comprar-gris.gif'
@@ -46,7 +49,7 @@ You need to create a config file (config/initializers/dineromail.rb) with:
 
 == Example dineromail forward page
 
-    <%= dineromail_button('Item name',price,:transaction_id => @transaction_id) %>
+    <%= dineromail_button('Item name', price, quantity, :transaction_id => @transaction_id) %>
 
 == Contributing to Dineromail
 

@@ -12,8 +12,8 @@ module Dineromail
   self.configure do |config|
     #Default confiuration
     config.ipn_webservice_url = 'https://argentina.dineromail.com/Vender/Consulta_IPN.asp'
-    config.currency = Configuration::PESO
-    config.pay_methods = '' #Todos
+    config.currency = Configuration::PESO_AR
+    config.pay_methods = 'all' #Todos
     config.payment_url = 'https://argentina.dineromail.com/Shop/Shop_Ingreso.asp'
     config.button_image_url = 'https://argentina.dineromail.com/imagenes/vender/boton/comprar-gris.gif'
   end
