@@ -32,7 +32,7 @@ module DineromailHelper
     options.reject!{|k, v| v.nil? }
 
     #name, amount, quantity
-    options[:item_name_1] = name
+    options[:item_name_1] = item_name
     options[:item_ammount_1] = amount
     options[:item_quantity_1] = quantity
 
