@@ -33,7 +33,8 @@ module DineromailHelper
 
     #name, amount, quantity
     options[:item_name_1] = item_name
-    options[:item_ammount_1] = amount
+    #convert it to integer
+    options[:item_ammount_1] = (amount * 100).to_i
     options[:item_quantity_1] = quantity
 
 
@@ -45,5 +46,4 @@ module DineromailHelper
   end
 
 end
-
 
