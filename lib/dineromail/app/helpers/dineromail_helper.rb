@@ -27,11 +27,17 @@ module DineromailHelper
                            :pending_url => Dineromail.configuration.pending_url,
                            :error_url => Dineromail.configuration.error_url,
                            :payment_method_available => Dineromail.configuration.pay_methods,
-                           :currency => Dineromail.configuration.currency)
+                           :currency => Dineromail.configuration.currency,
+                           :tool => 'button')
     options.reject!{|k, v| v.nil? }
 
+    #name, amount, quantity
+    options[:item_name_1] = name
+    options[:item_ammount_1] = amount
+    options[:item_quantity_1] = quantity
+
+
     String.new.html_safe.tap do |html|
-      #name, amount, quantity
       options.each do |name, value|
         html << content_tag(:input, nil, :type => 'hidden', :name => name, :value => value)
       end
