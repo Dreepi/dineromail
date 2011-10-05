@@ -1,4 +1,6 @@
 require 'dineromail/version'
+require 'dineromail/currency'
+require 'dineromail/country'
 require 'dineromail/notification'
 require 'dineromail/buyer'
 require 'dineromail/operation'
