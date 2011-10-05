@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   
   s.add_dependency "happymapper"
   s.add_dependency "httparty"
-  s.add_dependency "rails", ["~> 3.0"]
   s.add_development_dependency "bundler"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "rspec2-rails-views-matchers"
