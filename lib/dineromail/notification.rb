@@ -14,15 +14,15 @@ module Dineromail
       ipn_url = options[:ipn_webservice_url] || Dineromail.configuration.ipn_webservice_url
       request_data = xml_request_for(transaction_ids, options)
       response = HTTParty.get ipn_url , :query => {:data => request_data}
-      Report.parse response.body
+      Dineromail::Report.parse response.body
     end
 
-    def self.xml_request_for(transaction_ids, options = {})
+    def xml_request_for(transaction_ids, options = {})
       account_number = options[:account_number] || Dineromail.configuration.account_number
       password = options[:password] || Dineromail.configuration.password
 
       xml_ids = transaction_ids.map{|transaction_id| "<ID>#{transaction_id}</ID>" }.join
-      <<-EOF
+      <<-EOF.strip
         <REPORTE>
           <NROCTA>#{account_number}</NROCTA>
           <DETALLE>
