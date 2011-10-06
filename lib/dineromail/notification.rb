@@ -39,7 +39,7 @@ module Dineromail
     end
 
     def valid_report?
-      status_report.valid_report?
+      @report.valid_report?
     end
 
     def method_missing(symbol, *args)
