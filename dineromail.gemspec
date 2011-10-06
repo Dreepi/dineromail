@@ -4,7 +4,7 @@ require "dineromail/version"
 
 Gem::Specification.new do |s|
   s.name        = "dineromail"
-  s.version     = Dineromail::VERSION
+  s.version     = Dineromail::VERSION.dup
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Nicolas Mosconi", "Shadi Calcagni", "Juan Pablo Gutierrez"]
   s.email       = ["nicolas@soluciones-simplex.com.ar", "shadi@soluciones-simplex.com.ar", "juanpablo@soluciones-simplex.com.ar"]
