@@ -19,7 +19,7 @@
                 </COMPRADOR>
                 <MONTO>60.2</MONTO>
                 <MONTONETO>50.3</MONTONETO>
-                <METODOPAGO>TARJETA DE CREDITO</METODOPAGO>
+                <METODOPAGO>2</METODOPAGO>
                 <MEDIOPAGO>VISA</MEDIOPAGO>
                 <CUOTAS>1</CUOTAS>
                 <ITEMS>
@@ -27,6 +27,38 @@
                         <DESCRIPCION>Libro</DESCRIPCION>
                         <MONEDA>1</MONEDA>
                         <PRECIOUNITARIO>6.90</PRECIOUNITARIO>
+                        <CANTIDAD>2</CANTIDAD>
+                    </ITEM>
+                </ITEMS>
+                <VENDEDOR>
+                    <TIPODOC></TIPODOC>
+                    <NUMERODOC></NUMERODOC>
+                </VENDEDOR>
+            </OPERACION>
+            <OPERACION>
+                <ID>5547</ID>
+                <FECHA>02/28/2011 12:01:00 PM</FECHA>
+                <ESTADO>1</ESTADO>
+                <NUMTRANSACCION>12346</NUMTRANSACCION>
+                <COMPRADOR>
+                    <EMAIL>comprador2@email.com</EMAIL>
+                    <DIRECCION>San Martin 10</DIRECCION>
+                    <COMENTARIO></COMENTARIO>
+                    <NOMBRE>Juan</NOMBRE>
+                    <TELEFONO>4444444</TELEFONO>
+                    <TIPODOC>DNI</TIPODOC>
+                    <NUMERODOC>123456789</NUMERODOC>
+                </COMPRADOR>
+                <MONTO>10.2</MONTO>
+                <MONTONETO>10.2</MONTONETO>
+                <METODOPAGO>1</METODOPAGO>
+                <MEDIOPAGO>1</MEDIOPAGO>
+                <CUOTAS>1</CUOTAS>
+                <ITEMS>
+                    <ITEM>
+                        <DESCRIPCION>Libro</DESCRIPCION>
+                        <MONEDA>1</MONEDA>
+                        <PRECIOUNITARIO>5.1</PRECIOUNITARIO>
                         <CANTIDAD>2</CANTIDAD>
                     </ITEM>
                 </ITEMS>
