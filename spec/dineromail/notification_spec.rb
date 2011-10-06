@@ -11,7 +11,7 @@ describe Dineromail::Notification do
   end
 
 
-  describe  'should get automaticaly the status data associated with the notification' do
+  describe "obtaining report" do
     let(:notification_xml) {File.read('spec/fixtures/notification.xml')}
     let(:notification)     {Dineromail::Notification.parse(notification_xml)}
     before do
