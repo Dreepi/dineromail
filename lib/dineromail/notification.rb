@@ -37,11 +37,5 @@ module Dineromail
         </REPORTE>
       EOF
     end
-
-    def method_missing(symbol, *args)
-      unless status_report.operations.empty?
-        status_report.operations.first.send(symbol, *args)
-      end
-    end
   end
 end
