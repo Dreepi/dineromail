@@ -9,7 +9,7 @@ module Dineromail
     element :status,         Integer,  tag: 'ESTADO'
     element :amount,         Float,    tag: 'MONTO'
     element :net_amount,     Float,    tag: 'MONTONETO'
-    element :pay_method,     String,   tag: 'METODOPAGO'
+    element :pay_method,     Integer,  tag: 'METODOPAGO'
     element :pay_medium,     String,   tag: 'MEDIOPAGO'
 
     has_one  :buyer, Buyer,            tag: 'COMPRADOR'

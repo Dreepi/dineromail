@@ -6,7 +6,7 @@ module Dineromail
 
     element :description, String,  tag: 'DESCRIPCION'
     element :currency,    Integer, tag: 'MONEDA'
-    element :unit_price,  Float,   tag: 'PRECIOUNIRARIO'
+    element :unit_price,  Float,   tag: 'PRECIOUNITARIO'
     element :count,       Integer, tag: 'CANTIDAD'
 
     DOLLAR = 2
