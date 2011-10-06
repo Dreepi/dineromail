@@ -15,7 +15,7 @@ module Dineromail
     #Default confiuration
     config.payment_method_available = 'all' #Todos
     config.ipn_webservice_url = 'https://argentina.dineromail.com/Vender/Consulta_IPN.asp'
-    config.payment_url = 'https://argentina.dineromail.com/Shop/Shop_Ingreso.asp'
+    config.payment_url = "https://checkout.dineromail.com/CheckOut"
     config.button_image_url = 'https://argentina.dineromail.com/imagenes/vender/boton/comprar-gris.gif'
   end
 end
