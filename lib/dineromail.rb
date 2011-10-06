@@ -11,7 +11,7 @@ module Dineromail
   autoload :OperationNotification, 'dineromail/operation_notification'
   autoload :OperationReport,       'dineromail/operation_report'
   autoload :Item,                  'dineromail/item'
-  autoload :StatusReport,          'dineromail/status_report'
+  autoload :Report,                'dineromail/report'
 
   class Configuration
     attr_accessor :payment_url, :ipn_webservice_url,
