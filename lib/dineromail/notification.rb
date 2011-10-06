@@ -38,10 +38,6 @@ module Dineromail
       EOF
     end
 
-    def valid_report?
-      @report.valid_report?
-    end
-
     def method_missing(symbol, *args)
       unless status_report.operations.empty?
         status_report.operations.first.send(symbol, *args)

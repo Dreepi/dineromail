@@ -6,7 +6,7 @@ module Dineromail
 
     tag 'REPORTE'
 
-    element :report_status, Integer, tag: 'ESTADOREPORTE'
+    element :status, Integer, tag: 'ESTADOREPORTE'
 
     has_many :operations,   OperationReport
 
@@ -20,8 +20,8 @@ module Dineromail
     TRANSACTION_NOT_FOUND_REQUEST_STATUS = 8
 
 
-    def valid_report?
-      report_status == VALID_REPORT_STATUS
+    def valid?
+      self.status == VALID_REPORT_STATUS
     end
 
   end

@@ -21,7 +21,7 @@ describe Dineromail::Notification do
       notification.report
     end
 
-    it { notification.valid_report?.should be_true }
+    it { notification.report.valid?.should be_true }
   end
 
 end
