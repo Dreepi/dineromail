@@ -13,8 +13,8 @@ require 'action_controller'
 module Dineromail
   self.configure do |config|
     #Default confiuration
+    config.payment_method_available = 'all' #Todos
     config.ipn_webservice_url = 'https://argentina.dineromail.com/Vender/Consulta_IPN.asp'
-    config.pay_methods = 'all' #Todos
     config.payment_url = 'https://argentina.dineromail.com/Shop/Shop_Ingreso.asp'
     config.button_image_url = 'https://argentina.dineromail.com/imagenes/vender/boton/comprar-gris.gif'
   end

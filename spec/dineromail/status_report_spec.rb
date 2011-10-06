@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'rspec/rails'
-require 'rspec/rails/views/matchers'
+require 'rspec2-rails-views-matchers'
 
 describe Dineromail::StatusReport do
   it 'should load the status report from xml' do

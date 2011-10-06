@@ -21,12 +21,12 @@ module DineromailHelper
     options.symbolize_keys!
     options.reverse_merge!(:merchant => Dineromail.configuration.account_number,
                            :country_id => Dineromail.configuration.country_id,
-                           :header_image => Dineromail.configuration.logo_url,
+                           :header_image => Dineromail.configuration.header_image,
                            :seller_name => Dineromail.configuration.seller_name,
                            :ok_url => Dineromail.configuration.ok_url,
                            :pending_url => Dineromail.configuration.pending_url,
                            :error_url => Dineromail.configuration.error_url,
-                           :payment_method_available => Dineromail.configuration.pay_methods,
+                           :payment_method_available => Dineromail.configuration.payment_method_available,
                            :currency => Dineromail.configuration.currency,
                            :tool => 'button')
     options.reject!{|k, v| v.nil? }

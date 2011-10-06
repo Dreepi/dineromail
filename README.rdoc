@@ -15,11 +15,11 @@ on Rails 3 application. To install, simply add the following to your Gemfile:
 You need to create a config file (config/initializers/dineromail.rb) with:
 
     Dineromail.configure do |config|
-      config.pay_methods = '' #All the available methods
+      config.payment_method_available = 'all' #All the available methods
       config.account_number = 'your_account_number'
       config.seller_name = 'Your Company Name'
       config.password = 'your_password'
-      config.logo_url = 'http://my-web.com/images/logo.png'
+      config.header_url = 'http://my-web.com/images/logo.png'
       config.ok_url = 'http://my-web.com/success'
       config.pending_url = 'http://my-web.com/pending'
       config.error_url = 'http://my-web.com/error'
