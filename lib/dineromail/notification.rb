@@ -7,16 +7,36 @@ module Dineromail
 
     has_many :operations, Dineromail::OperationNotification
 
-    def initialize(options = {})
-      @options = options.symbolize_keys
+    def report(options = {})
+      @report ||= request_transactions( self.operations.map(&:transaction_id) )
     end
 
-    def get_report
-      unless status_report
-        transactions_ids = self.operations.map(&:transaction_id)
-        status_report = Report.get_for(transaction_ids, @options)
-      end
-      status_report
+    def request_transactions(transaction_ids, options = {})
+      ipn_url = options[:ipn_webservice_url] || Dineromail.configuration.ipn_webservice_url
+      request_data = xml_request_for(transaction_ids, options)
+      response = HTTParty.get ipn_url , :query => {:data => request_data}
+      Report.parse response.body
+    end
+
+    def self.xml_request_for(transaction_ids, options = {})
+      account_number = options[:account_number] || Dineromail.configuration.account_number
+      password = options[:password] || Dineromail.configuration.password
+
+      xml_ids = transaction_ids.map{|transaction_id| "<ID>#{transaction_id}</ID>" }.join
+      <<-EOF
+        <REPORTE>
+          <NROCTA>#{account_number}</NROCTA>
+          <DETALLE>
+          <CONSULTA>
+            <CLAVE>#{password}</CLAVE>
+            <TIPO>1</TIPO>
+            <OPERACIONES>
+              #{xml_ids}
+            </OPERACIONES>
+          </CONSULTA>
+          </DETALLE>
+        </REPORTE>
+      EOF
     end
 
     def valid_report?

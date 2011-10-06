@@ -27,32 +27,5 @@ module Dineromail
       report_status == VALID_REPORT_STATUS
     end
 
-
-    def self.get_report_for(transaction_id, options = {})
-      options = options.symbolize_keys
-      ipn_url = options[:ipn_webservice_url] || Dineromail.configuration.ipn_webservice_url
-      request_data = xml_request_for(transaction_id,options)
-      response = HTTParty.get ipn_url , :query => {:data => request_data}
-      self.parse response.body
-    end
-
-    def self.xml_request_for(transaction_id, options = {})
-      options = options.symbolize_keys
-      account_number = options[:account_number] || Dineromail.configuration.account_number
-      password = options[:password] || Dineromail.configuration.password
-      "<REPORTE>
-            <NROCTA>#{account_number}</NROCTA>
-            <DETALLE>
-            <CONSULTA>
-              <CLAVE>#{password}</CLAVE>
-              <TIPO>1</TIPO>
-              <OPERACIONES>
-                <ID>#{transaction_id}</ID>
-              </OPERACIONES>
-            </CONSULTA>
-            </DETALLE>
-          </REPORTE>"
-    end
-
   end
 end
