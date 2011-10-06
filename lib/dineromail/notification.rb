@@ -37,5 +37,6 @@ module Dineromail
         </REPORTE>
       EOF
     end
+
   end
 end
