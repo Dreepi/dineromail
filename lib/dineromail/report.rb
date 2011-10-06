@@ -5,8 +5,10 @@ module Dineromail
     include HappyMapper
 
     tag 'REPORTE'
-    element :report_status, Integer, :tag => 'ESTADOREPORTE'
-    has_many :operations, OperationReport
+
+    element :report_status, Integer, tag: 'ESTADOREPORTE'
+
+    has_many :operations,   OperationReport
 
     VALID_REPORT_STATUS = 1
     MALFORMED_REPORT_STATUS = 2

@@ -2,19 +2,20 @@ module Dineromail
   class OperationReport
     include HappyMapper
 
-    tag 'operacion'
+    tag 'OPERACION'
 
-    element :transaction_id, Integer,  :tag => 'id'
-    element :date,           DateTime, :tag => 'fecha'
-    element :status,         Integer,  :tag => 'estado'
-    element :amount,         Float,    :tag => 'monto'
-    element :net_amount,     Float,    :tag => 'montoneto'
-    element :pay_method,     String,   :tag => 'metodopago'
-    element :pay_medium,     String,   :tag => 'mediopago'
-    has_one :buyer,          Buyer,    :tag => 'comprador'
-    has_many :items,         Dineromail::Item, :tag => 'item'
+    element :transaction_id, Integer,  tag: 'ID'
+    element :date,           DateTime, tag: 'FECHA'
+    element :status,         Integer,  tag: 'ESTADO'
+    element :amount,         Float,    tag: 'MONTO'
+    element :net_amount,     Float,    tag: 'MONTONETO'
+    element :pay_method,     String,   tag: 'METODOPAGO'
+    element :pay_medium,     String,   tag: 'MEDIOPAGO'
 
-    PENDING_STATUS = 1
+    has_one  :buyer, Buyer,            tag: 'COMPRADOR'
+    has_many :items, Dineromail::Item, tag: 'ITEM'
+
+    PENDING_STATUS   = 1
     COMPLETED_STATUS = 2
     CANCELLED_STATUS = 3
 

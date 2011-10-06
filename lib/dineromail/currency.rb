@@ -2,10 +2,10 @@ module Dineromail
   module Currency
 
     PESO_AR = "ars"
-    DOLLAR = "usd"
+    DOLLAR  = "usd"
     PESO_MX = "mxn"
     PESO_CL = "clp"
-    REAL = "brl"
+    REAL    = "brl"
 
   end
 end

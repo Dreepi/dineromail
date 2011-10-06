@@ -4,13 +4,13 @@ module Dineromail
 
     tag 'ITEM'
 
-    element :description, String, :tag => 'descripcion'
-    element :currency, Integer, :tag => 'moneda'
-    element :unit_price, Float, :tag => 'preciounitario'
-    element :count, Integer, :tag => 'cantidad'
+    element :description, String,  tag: 'DESCRIPCION'
+    element :currency,    Integer, tag: 'MONEDA'
+    element :unit_price,  Float,   tag: 'PRECIOUNIRARIO'
+    element :count,       Integer, tag: 'CANTIDAD'
 
     DOLLAR = 2
-    PESO = 1
+    PESO   = 1
 
   end
 end
