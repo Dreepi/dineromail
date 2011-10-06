@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 describe Dineromail::Notification do
-  it 'should load the notifications from the notification xml' do
-    notification_xml = File.read( 'spec/fixtures/notification.xml')
-    notification = Dineromail::Notification.parse(notification_xml)
+  describe "parsing notification" do
+    let(:notification_xml) {File.read( 'spec/fixtures/notification.xml')}
+    let(:notification) {Dineromail::Notification.parse(notification_xml)}
 
-    notification.operations.count.should == 2
-    notification.operations.first.transaction_id.should == 1889
-    notification.operations.last.transaction_id.should == 5547
+    it {notification.operations.count.should == 2}
+    it {notification.operations.first.transaction_id.should == 1889}
+    it {notification.operations.last.transaction_id.should == 5547}
   end
 
   it 'should get automaticaly the status data associated with the notification' do

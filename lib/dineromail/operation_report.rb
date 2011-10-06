@@ -1,4 +1,3 @@
-require 'dineromail/item'
 module Dineromail
   class OperationReport
     include HappyMapper

@@ -2,7 +2,8 @@ module Dineromail
   class Buyer
     include HappyMapper
 
-    tag 'comprador'
+    tag 'COMPRADOR'
+
     element :email, String, :tag => 'email'
     element :address, String, :tag => 'direccion'
     element :name, String, :tag => 'nombre'

@@ -2,15 +2,15 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'rspec2-rails-views-matchers'
 
-describe Dineromail::StatusReport do
+describe Dineromail::Report do
   it 'should load the status report from xml' do
     xml = File.read( 'spec/fixtures/status_report.xml')
-    
+
     status_report = Dineromail::StatusReport.parse(xml)
     operation = status_report.operations.first
     buyer = operation.buyer
     item = operation.items.first
-    
+
     status_report.report_status.should == 1
     status_report.valid_report?.should be_true
     operation.transaction_id.should == 1889
@@ -35,7 +35,7 @@ describe Dineromail::StatusReport do
     item.count.should == 2
     item.unit_price.should == 6.9
   end
-  
+
   it 'should use the configuration to get the parameters for the request if no options are given' do
     transaction_id = 42
     Dineromail.configure do |c|
@@ -47,7 +47,7 @@ describe Dineromail::StatusReport do
     xml_request.should have_tag('clave', :text => 'password-123')
     xml_request.should have_tag('id', :text => '42')
   end
-  
+
   it 'should use the option parameters for the request if options are given' do
     transaction_id = 42
     Dineromail.configure do |c|
@@ -59,5 +59,5 @@ describe Dineromail::StatusReport do
     xml_request.should have_tag('clave', :text => 'password-456')
     xml_request.should have_tag('id', :text => '42')
   end
-  
+
 end

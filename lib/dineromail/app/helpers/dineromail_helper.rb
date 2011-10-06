@@ -1,5 +1,5 @@
 module DineromailHelper
- 
+
   def dineromail_button(item_name, amount, quantity = 1, options = {})
     options.symbolize_keys!
 
@@ -15,8 +15,8 @@ module DineromailHelper
       end
     end
   end
-  
-  
+
+
   def dineromail_inputs(item_name, amount, quantity, options = {})
     options.symbolize_keys!
     options.reverse_merge!(:merchant => Dineromail.configuration.account_number,

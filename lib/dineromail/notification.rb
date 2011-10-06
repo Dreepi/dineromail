@@ -1,4 +1,3 @@
-require 'happymapper'
 module Dineromail
   class Notification
     include HappyMapper

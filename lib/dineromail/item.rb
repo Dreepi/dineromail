@@ -2,7 +2,8 @@ module Dineromail
   class Item
     include HappyMapper
 
-    tag 'item'
+    tag 'ITEM'
+
     element :description, String, :tag => 'descripcion'
     element :currency, Integer, :tag => 'moneda'
     element :unit_price, Float, :tag => 'preciounitario'
