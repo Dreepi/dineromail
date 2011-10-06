@@ -12,6 +12,7 @@ module Dineromail
   autoload :OperationReport,       'dineromail/operation_report'
   autoload :Item,                  'dineromail/item'
   autoload :Report,                'dineromail/report'
+  autoload :DateTimeParser,        'dineromail/date_time_parser'
 
   class Configuration
     attr_accessor :payment_url, :ipn_webservice_url,

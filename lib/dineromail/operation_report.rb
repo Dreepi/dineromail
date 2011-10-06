@@ -1,11 +1,12 @@
 module Dineromail
   class OperationReport
+
     include HappyMapper
 
     tag 'OPERACION'
 
     element :transaction_id, Integer,  tag: 'ID'
-    element :date,           DateTime, tag: 'FECHA'
+    element :date,           Dineromail::DateTimeParser, tag: 'FECHA', parser: :parse
     element :status,         Integer,  tag: 'ESTADO'
     element :amount,         Float,    tag: 'MONTO'
     element :net_amount,     Float,    tag: 'MONTONETO'
