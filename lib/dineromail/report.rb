@@ -1,15 +1,10 @@
-require 'happymapper'
-require 'httparty'
-require 'dineromail/buyer'
-require 'dineromail/operation'
-
 module Dineromail
   class Report
     attr_accessor :transaction_id
 
     include HappyMapper
 
-    tag 'reporte'
+    tag 'REPORTE'
     element :report_status, Integer, :tag => 'ESTADOREPORTE'
     has_many :operations, OperationReport
 
