@@ -11,8 +11,8 @@ describe Dineromail::Report do
     buyer = operation.buyer
     item = operation.items.first
 
-    report.report_status.should == 1
-    report.valid_report?.should be_true
+    report.status.should == 1
+    report.valid?.should be_true
     operation.transaction_id.should == 1889
     operation.date.should == DateTime.civil(2011, 1, 28, 12, 2, 1)
     operation.status.should == Dineromail::OperationReport::PENDING_STATUS
