@@ -5,13 +5,15 @@ module Dineromail
 
     tag 'OPERACION'
 
-    element :transaction_id, Integer,  tag: 'ID'
-    element :date,           Dineromail::DateTimeParser, tag: 'FECHA', parser: :parse
+    element :transaction_id, String,  tag: 'ID'
+    element :dm_transaction, Integer, tag: 'NUMTRANSACCION'
+    element :date,           Dineromail::DateTimeParser, tag: 'FECHA', parser: :parse, on_save: lambda {|d| Dineromail::DateTimeParser.print d }
     element :status,         Integer,  tag: 'ESTADO'
     element :amount,         Float,    tag: 'MONTO'
     element :net_amount,     Float,    tag: 'MONTONETO'
     element :pay_method,     Integer,  tag: 'METODOPAGO'
     element :pay_medium,     String,   tag: 'MEDIOPAGO'
+    element :payments,       Integer,  tag: 'CUOTAS'
 
     has_one  :buyer, Buyer,            tag: 'COMPRADOR'
     has_many :items, Dineromail::Item, tag: 'ITEM'

@@ -6,8 +6,8 @@ describe Dineromail::Notification do
     let(:notification)     {Dineromail::Notification.parse(notification_xml)}
 
     it {notification.operations.count.should                == 2}
-    it {notification.operations.first.transaction_id.should == 1889}
-    it {notification.operations.last.transaction_id.should  == 5547}
+    it {notification.operations.first.transaction_id.should == "1889"}
+    it {notification.operations.last.transaction_id.should  == "5547"}
   end
 
 

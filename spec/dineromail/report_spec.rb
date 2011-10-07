@@ -13,7 +13,7 @@ describe Dineromail::Report do
 
     report.status.should == 1
     report.valid?.should be_true
-    operation.transaction_id.should == 1889
+    operation.transaction_id.should == "1889"
     operation.date.should == DateTime.civil(2011, 1, 28, 12, 2, 1)
     operation.status.should == Dineromail::OperationReport::PENDING_STATUS
     operation.pending?.should be_true
@@ -32,7 +32,7 @@ describe Dineromail::Report do
     buyer.document_number.should == '222222222'
     item.description.should == 'Libro'
     item.currency.should == 1
-    item.count.should == 2
+    item.quantity.should == 2
     item.unit_price.should == 6.9
   end
 

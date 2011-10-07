@@ -4,8 +4,8 @@ module Dineromail
 
     tag 'OPERACION'
 
-    element :transaction_id, Integer, tag: 'ID'
-    element :type,           String,  tag: 'TIPO'
+    element :transaction_id, String,  tag: 'ID'
+    element :type,           Integer,  tag: 'TIPO'
 
   end
 end
