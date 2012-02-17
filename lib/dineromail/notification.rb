@@ -7,7 +7,7 @@ module Dineromail
     has_many :operations, Dineromail::OperationNotification
 
     def report(options = {})
-      @report ||= request_transactions( self.operations.map(&:transaction_id) )
+      @report ||= request_transactions( self.operations.map(&:transaction_id).uniq )
     end
 
     def request_transactions(transaction_ids, options = {})
