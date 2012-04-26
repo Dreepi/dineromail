@@ -13,7 +13,7 @@ module Dineromail
     def request_transactions(transaction_ids, options = {})
       ipn_url = options[:ipn_webservice_url] || Dineromail.configuration.ipn_webservice_url
       request_data = xml_request_for(transaction_ids, options)
-      response = HTTParty.get ipn_url , :query => {:data => request_data}
+      response = HTTParty.post ipn_url , :body => {:data => request_data}
       Dineromail::Report.parse response.body
     end
 
